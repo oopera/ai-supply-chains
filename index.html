@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Supply Chains</title>
+  <meta name="description" content="A hub for resources and events on AI supply chains — including the FAccT 2026 tutorial: Studying, Governing, Critiquing and Tooling for AI Supply Chains.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="site-title" data-nav="home">AI&nbsp;Supply&nbsp;Chains</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link" data-nav="home">Home</a>
+        <a href="#tutorial" class="nav-link" data-nav="tutorial">FAccT AI Supply Chain Tutorial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ Tab: Home ============ -->
+    <section id="tab-home" class="tab-panel" hidden>
+      <div class="container">
+        <div class="hero">
+          <h1>AI Supply Chains</h1>
+          <p class="hero-sub">
+            A hub for collecting resources on AI supply chains and coordinating
+            events on the topic.
+          </p>
+          <p class="construction">
+            This page is under construction&nbsp;🤞🏼💪🏻🙈
+          </p>
+          <p>
+            In the meantime, visit the
+            <a href="#tutorial" data-nav="tutorial">FAccT 2026 tutorial page</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tab: FAccT Tutorial ============ -->
+    <section id="tab-tutorial" class="tab-panel" hidden>
+      <div class="container">
+
+        <header class="tutorial-header">
+          <p class="eyebrow">ACM FAccT 2026 · Tutorial</p>
+          <h1>Studying, Governing, Critiquing and Tooling for AI&nbsp;Supply&nbsp;Chains</h1>
+          <p class="meta-line">
+            <span class="meta-item"><strong>When:</strong> Saturday, June 27, 3:30–4:30&nbsp;PM</span>
+            <span class="meta-item"><strong>Format:</strong> Hybrid — attendees may join virtually or in person</span>
+          </p>
+        </header>
+
+        <!-- Two-column intro -->
+        <div class="two-col">
+
+          <div class="card">
+            <h2>About the Tutorial</h2>
+            <p>
+              This 60-minute tutorial introduces participants to the concept of
+              AI supply chains and the practical (or impractical) challenges
+              researchers and practitioners face when attempting to study,
+              audit, design or build systems composed from multiple AI and
+              related components.
+            </p>
+            <p>
+              The tutorial aims to help the FAccT community better understand
+              the technical realities and governance implications of AI supply
+              chains, to identify opportunities for research that bridges
+              technical and socio-technical perspectives, and to inform
+              practitioners of the unique considerations developing under this
+              new AI regime.
+            </p>
+            <p>
+              We will combine short framing presentations with two interactive
+              panel discussions, bringing together perspectives from
+              researchers studying AI infrastructure, developers building
+              composite systems, and scholars analyzing power and governance in
+              AI ecosystems.
+            </p>
+            <h3>Schedule</h3>
+            <ul class="schedule">
+              <li><span class="time">0–2 min</span> Welcome, shared language setting</li>
+              <li><span class="time">2–32 min</span> <strong>Panel 1:</strong> Power, Regulation, &amp; Law in AI Supply Chains</li>
+              <li><span class="time">2 min</span> Transition</li>
+              <li><span class="time">35–55 min</span> <strong>Panel 2:</strong> Challenges in Studying, Building, and Tooling AI Supply Chains</li>
+              <li><span class="time">55–60 min</span> Wrap up: next steps, details of social hour</li>
+            </ul>
+            <h3>Organizers</h3>
+            <ul class="organizer-list">
+              <li><strong>Aspen K. Hopkins</strong> — Massachusetts Institute of Technology</li>
+              <li><strong>Jatinder Singh</strong> — University of Cambridge / Research Center Trust, UA Ruhr</li>
+              <li><strong>David Gray Widder</strong> — University of Texas at Austin</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>What Are AI Supply Chains?</h2>
+            <p>
+              AI supply (or value) chains have become a norm; once monolithic
+              systems—developed and deployed in isolation by individuals or
+              small teams—are now built through increasingly complex,
+              interconnected dependencies and through compositional
+              applications. These chains enable organizations to leverage
+              shared resources and expertise, yet introduce a suite of new
+              technical, ethical, legal and regulatory challenges, as, unlike
+              their manufacturing counterparts, they lack the modularity,
+              redundancies, and transparency essential for easy correction of
+              failures.
+            </p>
+            <p>
+              Research on AI supply chains is surprisingly nascent. While FAccT
+              and broader ML communities have pioneered methods for auditing
+              and regulating individual algorithms, these tools often falter
+              when applied to the opaque networks of outsourced data,
+              proprietary APIs, third-party tooling, or compositional
+              deployments that define modern AI. We argue that the FAccT
+              community must expand its gaze beyond single models, systems and
+              their components to also account for the nature of modern
+              algorithmic supply chains.
+            </p>
+            <h3>Open Question Form</h3>
+            <p>
+              We will include an <strong>open form</strong> where participants
+              and panelists can submit questions ahead of time, helping us
+              surface the issues the audience cares most about.
+              <em>Link coming soon.</em>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Panelist videos -->
+        <section class="section">
+          <h2 class="section-title">Panelist Videos</h2>
+          <p class="section-intro">
+            Each panelist records a short pre-event video (under 5 minutes)
+            summarizing their relevant work and perspective on AI supply
+            chains. Videos are made available ahead of the conference as
+            deep-dive resources rather than required viewing.
+          </p>
+          <div class="video-row" id="video-row">
+            <!-- Video cards are rendered by main.js from the panelist data -->
+          </div>
+        </section>
+
+        <!-- Panelist information -->
+        <section class="section">
+          <h2 class="section-title">Panels &amp; Panelists</h2>
+
+          <div class="panel-block">
+            <h3>Panel 1 — Power, Regulation, &amp; Law in AI Supply Chains</h3>
+            <p>
+              The first panel examines the political economy and governance
+              implications of AI supply chains. As AI capabilities become
+              centralized in large model providers and infrastructure
+              platforms, downstream developers increasingly depend on
+              proprietary APIs and services. This raises questions about power
+              concentration, transparency, accountability, and regulatory
+              oversight — situating AI supply chains within platform
+              governance, infrastructure politics, regulatory design, activist
+              efforts, and worker's rights.
+            </p>
+            <ul class="panelist-list" data-panel="1"></ul>
+          </div>
+
+          <div class="panel-block">
+            <h3>Panel 2 — Challenges in Studying, Building, and Tooling AI Supply Chains</h3>
+            <p>
+              The second panel focuses on technical and methodological
+              challenges faced by researchers and developers working with
+              composed AI systems: auditing systems built from closed
+              components, reproducing AI infrastructure without internal
+              access, reliability and safety in composed systems, and
+              burgeoning tooling and new methods of composition — including
+              agentic protocols.
+            </p>
+            <ul class="panelist-list" data-panel="2"></ul>
+          </div>
+        </section>
+
+        <!-- Social hour -->
+        <section class="section">
+          <h2 class="section-title">Associated Social Hour</h2>
+          <div class="card social-card">
+            <p>
+              While the panels will not incorporate live questions, attendees
+              will be able to connect with organizers and panelists afterwards.
+              Jatinder Singh and colleagues are hosting an informal
+              <strong>social hour</strong> — an additional gathering to chat
+              about AI supply chains and connect our multifaceted community
+              under the guise of tasty treats.
+            </p>
+            <p><em>Time and location to be announced.</em></p>
+          </div>
+        </section>
+
+        <!-- Lit guide -->
+        <section class="section">
+          <h2 class="section-title">Relevant Literature Guide <span class="badge">ongoing</span></h2>
+          <p class="section-intro">
+            A growing, collaboratively maintained list of resources on AI
+            supply chains with short summaries — intended as a long-standing
+            resource for the research community. Suggestions welcome.
+          </p>
+          <ol class="lit-list" id="lit-list">
+            <!-- Literature entries are rendered by main.js -->
+          </ol>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        AI Supply Chains · FAccT 2026 Tutorial —
+        Aspen K. Hopkins, Jatinder Singh, David Gray Widder
+      </p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

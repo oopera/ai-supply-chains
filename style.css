@@ -1,0 +1,392 @@
+/* ============================================================
+   AI Supply Chains — site styles
+   Clean, reserved, academic. Muted teal accent per wireframe.
+   ============================================================ */
+
+:root {
+  --accent: #1d6f64;        /* deep teal */
+  --accent-light: #e8f4f2;  /* pale teal wash */
+  --accent-mid: #5fb3a5;
+  --ink: #1f2421;           /* near-black text */
+  --ink-soft: #4c5550;
+  --rule: #d8ddda;
+  --paper: #fbfbf9;         /* warm off-white */
+  --card: #ffffff;
+  --max-width: 64rem;
+  --serif: "Georgia", "Charter", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: #134c44; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.site-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-title:hover { color: var(--accent); }
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover { color: var(--accent); }
+.nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Tabs ---------- */
+
+.tab-panel[hidden] { display: none; }
+.tab-panel { padding: 2.5rem 0 4rem; }
+
+/* ---------- Home / hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+}
+
+.construction {
+  display: inline-block;
+  font-size: 1.05rem;
+  background: var(--accent-light);
+  border: 1px solid var(--accent-mid);
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Tutorial header ---------- */
+
+.tutorial-header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.tutorial-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.9rem;
+  max-width: 46rem;
+}
+
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 2rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Two-column intro ---------- */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 46rem) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.02rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.card p { margin: 0 0 0.9rem; }
+.card p:last-child { margin-bottom: 0; }
+
+/* ---------- Schedule & organizer lists ---------- */
+
+.schedule, .organizer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.schedule li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.schedule li:last-child { border-bottom: none; }
+
+.schedule .time {
+  display: inline-block;
+  min-width: 6.2rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.organizer-list li { padding: 0.2rem 0; }
+
+/* ---------- Sections ---------- */
+
+.section { margin-top: 3.25rem; }
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-intro {
+  color: var(--ink-soft);
+  max-width: 44rem;
+  margin: 0 0 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-mid);
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  margin-left: 0.5rem;
+}
+
+/* ---------- Panelist videos ---------- */
+
+.video-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+}
+
+.video-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-thumb {
+  aspect-ratio: 16 / 10;
+  background: var(--accent);
+  background: linear-gradient(150deg, #1d6f64 0%, #155248 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.video-caption {
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.video-caption strong { display: block; }
+.video-caption span { color: var(--ink-soft); }
+
+/* ---------- Panels & panelists ---------- */
+
+.panel-block {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.panel-block h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+}
+
+.panel-block > p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.panelist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panelist-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  padding: 0.55rem 0;
+  border-top: 1px dotted var(--rule);
+}
+
+.panelist-name { font-weight: 600; }
+
+.panelist-tbd {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a6d1f;
+  background: #faf3dd;
+  border: 1px solid #e3d294;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
+
+.panelist-blurb {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  flex-basis: 100%;
+}
+
+/* ---------- Social hour ---------- */
+
+.social-card { border-top-color: var(--accent-mid); }
+
+/* ---------- Literature guide ---------- */
+
+.lit-list {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.lit-list li {
+  margin-bottom: 1.05rem;
+  font-size: 0.95rem;
+}
+
+.lit-entry-title { font-weight: 600; }
+
+.lit-entry-meta {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.lit-entry-summary {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: var(--card);
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.site-footer p { margin: 0; }
