@@ -116,7 +116,7 @@ const LITERATURE = [
     venue: "IEEE Access 7, 6562–6574",
     url: "https://doi.org/10.1109/ACCESS.2018.2887201",
     summary:
-      "Proposes tracking data flows ('decision provenance') as a mechanism for accountability in interconnected systems.",
+      "Proposes tracking data flows ('decision provenance') as a mechanism for accountability across algorithmic supply chains.",
   },
   {
     authors: "Singh, Powles, Pasquier & Bacon",
