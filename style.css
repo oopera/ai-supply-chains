@@ -356,6 +356,18 @@ h1, h2, h3 {
 
 /* ---------- Literature guide ---------- */
 
+.lit-group {
+  margin-bottom: 1.75rem;
+}
+
+.lit-group-title {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--accent);
+}
+
 .lit-list {
   margin: 0;
   padding-left: 1.4rem;

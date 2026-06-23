@@ -56,6 +56,7 @@ const PANELISTS = [
 
 const LITERATURE = [
   {
+    theme: "foundations",
     authors: "Cen, Hopkins, Ilyas, Madry, Struckman & Videgaray",
     year: 2023,
     title: "AI supply chains (and why they matter)",
@@ -65,6 +66,7 @@ const LITERATURE = [
       "An accessible introduction to AI supply chains and the reasons they deserve attention from researchers and policymakers.",
   },
   {
+    theme: "governance",
     authors: "Cobbe, Veale & Singh",
     year: 2023,
     title: "Understanding accountability in algorithmic supply chains",
@@ -74,6 +76,7 @@ const LITERATURE = [
       "Examines how accountability is distributed — and obscured — across the many actors involved in algorithmic supply chains.",
   },
   {
+    theme: "foundations",
     authors: "Hopkins, Cen, Struckman, Ilyas, Videgaray & Madry",
     year: 2025,
     title: "AI supply chains: An emerging ecosystem of AI actors, products, and services",
@@ -83,6 +86,7 @@ const LITERATURE = [
       "Formal modeling and empirical evaluation of AI supply chains as an emerging ecosystem.",
   },
   {
+    theme: "failures",
     authors: "Hopkins, Struckman, Driss & Madry",
     year: 2026,
     title: "When should model updates be adopted?",
@@ -92,6 +96,7 @@ const LITERATURE = [
       "Studies the downstream consequences of upstream model updates and when adopters should incorporate them.",
   },
   {
+    theme: "governance",
     authors: "Hopkins, Struckman, Klyman & Silbey",
     year: 2025,
     title: "Recourse, repair, reparation, & prevention: A stakeholder analysis of AI supply chains",
@@ -101,6 +106,7 @@ const LITERATURE = [
       "A stakeholder analysis of power asymmetries and sources of harm across AI supply chains.",
   },
   {
+    theme: "failures",
     authors: "Neumann & Singh",
     year: 2026,
     title: "AI safety evaluations need to consider cascading effects",
@@ -110,6 +116,7 @@ const LITERATURE = [
       "Argues that safety evaluations must account for cascading failures across composed AI systems.",
   },
   {
+    theme: "governance",
     authors: "Singh, Cobbe & Norval",
     year: 2019,
     title: "Decision provenance: Harnessing data flow for accountable systems",
@@ -119,6 +126,7 @@ const LITERATURE = [
       "Proposes tracking data flows ('decision provenance') as a mechanism for accountability across algorithmic supply chains.",
   },
   {
+    theme: "governance",
     authors: "Singh, Powles, Pasquier & Bacon",
     year: 2015,
     title: "Seeing through the clouds: Data flow management and compliance in cloud computing",
@@ -128,6 +136,7 @@ const LITERATURE = [
       "Early work on managing data flows and compliance across cloud service chains.",
   },
   {
+    theme: "openness",
     authors: "Widder & Nafus",
     year: 2023,
     title: "Dislocated accountabilities in the “AI supply chain”: Modularity and developers' notions of responsibility",
@@ -137,6 +146,7 @@ const LITERATURE = [
       "Shows how modularity in AI development dislocates developers' sense of responsibility along the supply chain.",
   },
   {
+    theme: "openness",
     authors: "Widder, Nafus, Dabbish & Herbsleb",
     year: 2022,
     title: "Limits and possibilities for “ethical AI” in open source: A study of deepfakes",
@@ -146,6 +156,7 @@ const LITERATURE = [
       "Examines what open-source norms can — and cannot — do for ethics in AI supply chains, through the case of deepfakes.",
   },
   {
+    theme: "openness",
     authors: "Widder, Whittaker & West",
     year: 2024,
     title: "Why 'open' AI systems are actually closed, and why this matters",
@@ -219,28 +230,48 @@ function renderPanelists() {
   });
 }
 
+const LIT_THEMES = [
+  { id: "foundations", label: "Foundations & framing" },
+  { id: "governance", label: "Accountability, governance & law" },
+  { id: "openness", label: "Openness, responsibility & power" },
+  { id: "failures", label: "Failures, safety & evaluation" },
+];
+
+function renderLitEntry(entry) {
+  const item = el("li");
+
+  let titleNode;
+  if (entry.url) {
+    titleNode = el("a", "lit-entry-title", entry.title);
+    titleNode.href = entry.url;
+    titleNode.target = "_blank";
+    titleNode.rel = "noopener";
+  } else {
+    titleNode = el("span", "lit-entry-title", entry.title);
+  }
+  item.appendChild(titleNode);
+
+  item.appendChild(
+    el("span", "lit-entry-meta", " — " + entry.authors + " (" + entry.year + "), " + entry.venue + ".")
+  );
+  item.appendChild(el("span", "lit-entry-summary", entry.summary));
+  return item;
+}
+
 function renderLiterature() {
-  const list = document.getElementById("lit-list");
-  if (!list) return;
-  LITERATURE.forEach((entry) => {
-    const item = el("li");
+  const container = document.getElementById("lit-list");
+  if (!container) return;
 
-    let titleNode;
-    if (entry.url) {
-      titleNode = el("a", "lit-entry-title", entry.title);
-      titleNode.href = entry.url;
-      titleNode.target = "_blank";
-      titleNode.rel = "noopener";
-    } else {
-      titleNode = el("span", "lit-entry-title", entry.title);
-    }
-    item.appendChild(titleNode);
+  LIT_THEMES.forEach((theme) => {
+    const entries = LITERATURE.filter((e) => e.theme === theme.id);
+    if (!entries.length) return;
 
-    item.appendChild(
-      el("span", "lit-entry-meta", " — " + entry.authors + " (" + entry.year + "), " + entry.venue + ".")
-    );
-    item.appendChild(el("span", "lit-entry-summary", entry.summary));
-    list.appendChild(item);
+    const group = el("div", "lit-group");
+    group.appendChild(el("h3", "lit-group-title", theme.label));
+    const list = el("ol", "lit-list");
+    entries.forEach((entry) => list.appendChild(renderLitEntry(entry)));
+    group.appendChild(list);
+    container.appendChild(group);
   });
 }
 
